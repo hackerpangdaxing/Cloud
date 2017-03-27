@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>在线测试</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+ <body class="um-vp bc-bg"  style="font-size: 24px" ontouchstart>
+       <scan id = "answer" > </scan>
+        题目：<scan id="id" ></scan>
+        <br />
+        <scan id="title"></scan>
+        <br />    
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="selection "  type = "radio" id = "chooseA" name="selection"  />
+        <label for="chooseA"><scan id="A"></scan></label>
+        <br/>
+        
+       &nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="selection" type = "radio" id = "chooseB" name="selection" />
+        <label for="chooseB"><scan id="B"></scan></label>
+        <br/>
+       &nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="selection" type = "radio" id = "chooseC" name="selection" />
+        <label for="chooseC"><scan id="C"></scan></label>
+        <br/>
+       &nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="selection" type = "radio" id = "chooseD" name="selection" />
+        <label for="chooseD"><scan id="D"></scan></label>
+        <br/>
+        </div>
+      
+        <div style="float:left"   id="up" onclick="" >
+             上一题
+        </div>
+        <div style="float:right"  id="login" onclick="judge('selection')" >
+             下一题
+        </div>
+        </div>
+        
+        <div id="result" align="center"></div>
+        <div id="result1" align="center"></div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/problemJudge.js"></script>
+    </body>
+    <script>
+    var TRUE_COUNT = 0
+    var obj
+    var class_radio = "selection"
+    var str1 = "servlet/ProblemJsonServlet?id="
+    var questionID = 1
+    var i =1
+    var count =5
+   
+         var str = "/"
+        loding(str1,questionID,class_radio,count)
+        $("#login").click(function(){
+         var q = questionID -1;
+        $("#result").text(TRUE_COUNT+str+count)
+        })
+
+    </script>
